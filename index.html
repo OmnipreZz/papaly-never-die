@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Papalue</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    
+</head>
+    
+<body>
+    <div class="main" id="app">
+        <h1 class="text-center">{{ title }}</h1>
+        <label class="labelized" for="inputLink">New url</label>
+        <input name="inputLink" class="input-text" v-model="link">
+        <button class="btn" @click="addLink">+</button>
+        <ul class="list">
+           <li class="bordered" v-for="(item,index) in linkArray" v-bind:id="index">
+            <a v-bind:href="item">{{ item }}</a>
+            <button class="btn red" @click="removeLink(index)"><span>&times;</span></button>
+          </li>
+        </ul>
+    </div>
+  <!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

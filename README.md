@@ -1,4 +1,8 @@
 # Papaly never die 
+
+Groupe : Simon R, Philippe, Geoffrey
+Projet : Laravel + Vue.js
+
 ___ 
 
 ### Pré-requis :

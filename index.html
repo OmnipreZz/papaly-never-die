@@ -26,13 +26,15 @@
         <label class="labelized" for="inputcategorie">Catégorie</label>
         <input name="inputcategorie" class="input-text" v-model="cat">
         <button class="btn" @click="addCategorie">+</button>
-        
-        <ul class="list">
-           <li class="bordered" v-for="(item,index) in linkArray" v-bind:id="index">
-            <a v-bind:href="item">{{ item }}</a>
-            <button class="btn red" @click="removeLink(index)"><span>&times;</span></button>
-          </li>
-        </ul>
+        <div class="bordered" v-for="(item,index) in listCat" v-bind:id="index">
+            <h4>{{ index }}</h4>
+            <ul class="list">
+            <li class="bordered" v-for="(it,ind) in item" v-bind:id="index">
+                <a v-bind:href="it" >{{ it }}</a>
+                <button class="btn red" @click="removeLink(ind)"><span>&times;</span></button>
+            </li>
+            </ul>
+        </div>
     </div>
   <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

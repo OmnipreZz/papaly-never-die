@@ -12,8 +12,12 @@ let app = new Vue({
     methods: {
         addCategorie(){
           this.listCat[this.cat] = [this.link]
-          this.listCat[this.cat].shift()
+          if(!this.link){
+            this.listCat[this.cat].shift()
+          }
+          
           console.table(this.listCat)
+          this.cat = ""
         },
         addLink(){
         if(this.cat){
@@ -25,7 +29,8 @@ let app = new Vue({
         } else {
           this.catError = true
           //faire une alerte flash
-        }  
+        } 
+        this.link = "" 
           console.table(this.listCat)
         },
         removeLink: function (index) {

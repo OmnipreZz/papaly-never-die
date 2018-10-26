@@ -3,10 +3,6 @@ let app = new Vue({
   el: '#app',
   data: {
     title: 'PapaVue',
-<<<<<<< HEAD
-      link: "toto",
-      linkArray: listLink
-=======
       listCat: {},
       link: null,
       cat: null,
@@ -21,7 +17,6 @@ let app = new Vue({
          // localStorage.removeItem('saveLink');
         }
       }
->>>>>>> 2bd8629e5e3533215452b95c9cddcf82f29abf66
     },
     methods: {
         addCategorie(){

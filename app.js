@@ -30,9 +30,6 @@ let app = new Vue({
           localStorage.setItem('saveLink',JSON.stringify(this.listCat))
         },
         addLink(){
-<<<<<<< HEAD
-            this.linkArray.push(this.link)
-=======
         if(this.cat){
           if(!this.listCat[this.cat]){
             this.listCat[this.cat] = [this.link]
@@ -47,7 +44,6 @@ let app = new Vue({
         localStorage.setItem('saveLink', JSON.stringify(this.listCat))
         this.link = "" 
           console.table(this.listCat)
->>>>>>> 2bd8629e5e3533215452b95c9cddcf82f29abf66
         },
         removeLink: function (index) {
           this.linkArray.splice(index, 1);

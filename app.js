@@ -9,6 +9,15 @@ let app = new Vue({
       linkArray: li,
       catError: false
     },
+    mounted() {
+      if (localStorage.getItem('saveLink')) {
+        try {
+          this.listCat = JSON.parse(localStorage.getItem('saveLink'));
+        } catch(e) {
+         // localStorage.removeItem('saveLink');
+        }
+      }
+    },
     methods: {
         addCategorie(){
           this.listCat[this.cat] = [this.link]
@@ -18,6 +27,7 @@ let app = new Vue({
           
           console.table(this.listCat)
           this.cat = ""
+          localStorage.setItem('saveLink',JSON.stringify(this.listCat))
         },
         addLink(){
         if(this.cat){
@@ -30,6 +40,8 @@ let app = new Vue({
           this.catError = true
           //faire une alerte flash
         } 
+
+        localStorage.setItem('saveLink', JSON.stringify(this.listCat))
         this.link = "" 
           console.table(this.listCat)
         },
